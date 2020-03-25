@@ -1,6 +1,4 @@
-# hotp
-HMAC-Based One-Time Password
-
+# HOTP(HMAC-Based One-Time Password)
 Generating an HOTP value.
 
 ## REFERENCES
