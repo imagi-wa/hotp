@@ -11,7 +11,7 @@ var (
 	Digit = 6
 )
 
-func HOTP(k []byte, c []byte) (value uint32) {
+func HOTP(k []byte, c uint64) (value uint32) {
 	cBits := make([]byte, 8)
 	binary.BigEndian.PutUint64(cBits, c)
 	value = truncate(hmacSha1(k, cBits))
