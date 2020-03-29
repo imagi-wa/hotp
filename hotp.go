@@ -12,7 +12,9 @@ var (
 )
 
 func HOTP(k []byte, c []byte) (value uint32) {
-	value = truncate(hmacSha1(k, c))
+	cBits := make([]byte, 8)
+	binary.BigEndian.PutUint64(cBits, c)
+	value = truncate(hmacSha1(k, cBits))
 	return
 }
 
